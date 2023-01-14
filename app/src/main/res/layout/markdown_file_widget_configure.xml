@@ -74,6 +74,12 @@
             android:text="Open in obsidian note taking app" />
 
         <RadioButton
+            android:id="@+id/radio_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Refresh content" />
+
+        <RadioButton
             android:id="@+id/radio_noop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

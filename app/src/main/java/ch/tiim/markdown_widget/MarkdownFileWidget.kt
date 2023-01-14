@@ -119,7 +119,14 @@ class MarkdownFileWidget : AppWidgetProvider() {
         views.setImageViewBitmap(R.id.renderImg, md.getBitmap())
 
         //views.setImageViewBitmap(R.id.renderImg, bitmap)
-        if (tapBehavior != TAP_BEHAVIOUR_NONE) {
+        if (tapBehavior == TAP_BEHAVIOUR_NONE) {
+            // Do nothing
+        } else if (tapBehavior == TAP_BEHAVIOUR_REFRESH) {
+            views.setOnClickPendingIntent(
+                R.id.renderImg,
+                getUpdatePendingIntent(context, appWidgetId)
+            )
+        } else {
             views.setOnClickPendingIntent(
                 R.id.renderImg,
                 getIntent(context, fileUri, tapBehavior, context.contentResolver)

@@ -21,6 +21,7 @@ import ch.tiim.markdown_widget.databinding.MarkdownFileWidgetConfigureBinding
  * The configuration screen for the [MarkdownFileWidget] AppWidget.
  */
 internal const val TAP_BEHAVIOUR_NONE = "none"
+internal const val TAP_BEHAVIOUR_REFRESH = "refresh"
 internal const val TAP_BEHAVIOUR_DEFAULT_APP = "default_app"
 internal const val TAP_BEHAVIOUR_OBSIDIAN = "obsidian"
 
@@ -68,6 +69,9 @@ class MarkdownFileWidgetConfigureActivity : Activity() {
         val tapBehaviour = when (rID) {
             R.id.radio_noop -> {
                 TAP_BEHAVIOUR_NONE
+            }
+            R.id.radio_refresh -> {
+                TAP_BEHAVIOUR_REFRESH
             }
             R.id.radio_obsidian -> {
                 TAP_BEHAVIOUR_OBSIDIAN
